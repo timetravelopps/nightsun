@@ -55,11 +55,16 @@ $(document).ready(function() {
       }
   })
   
- $("#bigplaybutton").touchstart( function() {
-  $("#jpId").jPlayer('play');
+  
+  $('#bigplaybutton').on('click', function(event) { 
+ $("#jpId").jPlayer('play');
 });
+
+//  $("#bigplaybutton").touchstart( function() {
+//   $("#jpId").jPlayer('play');
+// });
  
- $("#bigpause").touchstart( function() {
+ $("#bigpause").on('click', function(event) {
  
             if($("#jpId").data("jPlayer").status.paused) {
                $("#jpId").jPlayer("play");
