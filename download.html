@@ -1,0 +1,69 @@
+
+ <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ 
+ <head>
+ 
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="description" content="">
+
+<title>Night Sun</title>
+
+
+<link type="text/css" rel="stylesheet" href="css/nightsun.css">
+<link rel="image_src" href="res/sharethumb.jpg">
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+
+<script type="text/javascript" src="res/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="res/nightsun.js"></script>
+
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png"/>
+ 
+ 
+
+ <script type="text/javascript">
+ 
+
+
+window.addEventListener("load",function() {
+  setTimeout(function(){
+    window.scrollTo(0, 0);
+  }, 0);
+});
+
+
+$(document).ready(function() {
+    $("body").css("display", "none");
+ 
+    $("body").fadeIn(1000);
+ 
+    $("a.transition").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $("body").fadeOut(1000, redirectPage);      
+    });
+         
+    function redirectPage() {
+        window.location = linkLocation;
+    }
+});
+
+ </script>
+ </head>
+ 
+ <body>
+<div id="exitbutton"><a href="index.html" class="transition">&times;</a></div>
+<div id="mainindex" class="maintitle">Download</div>
+<div id="text">
+<p>
+Thanks ever so much for supporting the label & artists by purchasing this app. By way of thanks, here is a code to download the Night Sun single.</p>
+<br /><br />
+TTO-app-316xv
+<a href="http://rjbirkin.bandcamp.com/download">Go To Download Site</a>
+ </div>
+</body>
+ </html>
