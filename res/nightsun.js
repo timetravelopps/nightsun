@@ -56,13 +56,26 @@ $(document).ready(function() {
   })
   
   
-  $('#bigplaybutton').on('click', function(event) { 
- $("#jpId").jPlayer('play');
-});
 
-//  $("#bigplaybutton").touchstart( function() {
-//   $("#jpId").jPlayer('play');
-// });
+private OnClickListener mCorkyListener = new OnClickListener() {
+    public void onTouch(View v) {
+      $("#jpId").jPlayer('play');
+    }
+};
+
+protected void onCreate(Bundle savedValues) {
+    ...
+    // Capture our button from layout
+    Button button = (Button)findViewById(R.id.bigplaybutton);
+    // Register the onClick listener with the implementation above
+    button.setOnClickListener(mCorkyListener);
+    ...
+}
+
+
+//   $("#bigplaybutton").OnTouch( function() {
+//    $("#jpId").jPlayer('play');
+//  });
  
  $("#bigpause").on('click', function(event) {
  
