@@ -69,36 +69,36 @@ $(document).ready(function() {
 
 });
  
-    $('#stop').click(function() {
-    $('#jpId').jPlayer('stop');
-    $('#play').text('PLAY');
-    });
-    
-    $('#play').click(function() {
-    $('#jpId').jPlayer('play');
-    });
-  
- $('#pause').click(function() {
-    $('#jpId').jPlayer('pause');
-$('#play').text('APLY');
-    });
-
-  $('#jpId').bind($.jPlayer.event.playing, function(event) {
-     $('#play').text('PLAY');
-     
-  });
-  $('#jpId').bind($.jPlayer.event.loadstart, function(event) {
-     $('#play').text('loading...');
-  });
-  $('#jpId').bind($.jPlayer.event.suspend, function(event) {
-     $('#play').text('PLAY');
-  });
-
-  
-  $('#jpId').bind($.jPlayer.event.ended, function(event) {
-     $('#jpId').jPlayer('play');
-     $('#play').text('>');
-  });
+   //  $('#stop').click(function() {
+//     $('#jpId').jPlayer('stop');
+//     $('#play').text('PLAY');
+//     });
+//     
+//     $('#play').click(function() {
+//     $('#jpId').jPlayer('play');
+//     });
+//   
+//  $('#pause').click(function() {
+//     $('#jpId').jPlayer('pause');
+// $('#play').text('APLY');
+//     });
+// 
+//   $('#jpId').bind($.jPlayer.event.playing, function(event) {
+//      $('#play').text('PLAY');
+//      
+//   });
+//   $('#jpId').bind($.jPlayer.event.loadstart, function(event) {
+//      $('#play').text('loading...');
+//   });
+//   $('#jpId').bind($.jPlayer.event.suspend, function(event) {
+//      $('#play').text('PLAY');
+//   });
+// 
+//   
+//   $('#jpId').bind($.jPlayer.event.ended, function(event) {
+//      $('#jpId').jPlayer('play');
+//      $('#play').text('>');
+//   });
   
   $('#jpId').bind($.jPlayer.event.timeupdate, function(event) {
      $('#time').html($.jPlayer.convertTime(event.jPlayer.status.currentTime));
@@ -425,7 +425,7 @@ $('#container').fadeIn(1500).removeClass('p2 p3 p4 p5 p6 p7 p8 end');
 }
   
   timings = new Array();
-  timings[0] = 0.01; // 
+  timings[0] = 0.1; // 
   timings[1] = 10.5; // The clouds hang heavy over the city.
   timings[2] = 15.25; // The sun has been gone for weeks.
   timings[3] = 20.1; // An occasional window will glow with the light from candles,
