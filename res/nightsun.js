@@ -4,7 +4,7 @@ $(document).ready(function() {
 });
     
     currentTrigger = 0;
-    noauto = false;
+    noauto = true;
     nolyrics = false;
     
     if (location.hash == '#nolyrics') {
@@ -55,10 +55,23 @@ $(document).ready(function() {
       }
   })
   
+ $("#bigplaybutton").click( function() {
+  $("#jpId").jPlayer('play');
+});
+ 
+ $("#bigpause").click( function() {
+ 
+            if($("#jpId").data("jPlayer").status.paused) {
+               $("#jpId").jPlayer("play");
+            } else {
+               $("#jpId").jPlayer("pause");
+            }
+
+});
  
     $('#stop').click(function() {
     $('#jpId').jPlayer('stop');
-    $('#play').text('>');
+    $('#play').text('PLAY');
     });
     
     $('#play').click(function() {
@@ -67,18 +80,18 @@ $(document).ready(function() {
   
  $('#pause').click(function() {
     $('#jpId').jPlayer('pause');
-$('#play').text('>');
+$('#play').text('APLY');
     });
 
   $('#jpId').bind($.jPlayer.event.playing, function(event) {
-     $('#play').text('>');
+     $('#play').text('PLAY');
      
   });
   $('#jpId').bind($.jPlayer.event.loadstart, function(event) {
      $('#play').text('loading...');
   });
   $('#jpId').bind($.jPlayer.event.suspend, function(event) {
-     $('#play').text('>');
+     $('#play').text('PLAY');
   });
 
   
@@ -114,6 +127,7 @@ $('#play').text('>');
 // end key binding
   
 function startLyrics () {
+$('#container').hide().css('fontSize', '');
     $('#line1').hide().css('fontSize', '');
     $('#line2a').hide().css('fontSize', '');
 	$('#line2b').hide().css('fontSize', '');
@@ -139,12 +153,14 @@ function fireTrigger(trigger) {
     startLyrics ()
 });// 
 // $('#line1').html(lyrics[0]).addClass('titlefade').fadeIn(500).delay(2000).fadeOut(1000);
-$('#container').removeClass('p2 p3 p4 p5 p6 p7 p8 end');
+$('#index').fadeOut(1500);
+$('#container').fadeIn(1500).removeClass('p2 p3 p4 p5 p6 p7 p8 end');
+
 
                 		break;
                 
 			case 1: 
-				$('#line1').html(lyrics[0]).removeClass('titlefade').addClass('her2').fadeIn(000);
+				$('#line1').html(lyrics[0]).addClass('her2').fadeIn(000);
 				break;
                 
             case 2:
@@ -409,7 +425,7 @@ $('#container').removeClass('p2 p3 p4 p5 p6 p7 p8 end');
 }
   
   timings = new Array();
-  timings[0] = 0; // 
+  timings[0] = 0.01; // 
   timings[1] = 10.5; // The clouds hang heavy over the city.
   timings[2] = 15.25; // The sun has been gone for weeks.
   timings[3] = 20.1; // An occasional window will glow with the light from candles,
