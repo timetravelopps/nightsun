@@ -55,11 +55,11 @@ $(document).ready(function() {
       }
   })
   
- $("#bigplaybutton").click( function() {
+ $("#bigplaybutton").touchstart( function() {
   $("#jpId").jPlayer('play');
 });
  
- $("#bigpause").click( function() {
+ $("#bigpause").touchstart( function() {
  
             if($("#jpId").data("jPlayer").status.paused) {
                $("#jpId").jPlayer("play");
