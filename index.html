@@ -76,7 +76,20 @@ $(document).ready(function() {
     });
 }); 
 
+jQuery(document).ready(function() 
+    {
+       jQuery('#a').bind("touchstart touchend touchmove click",function(event) 
+       {
+    event.preventDefault();
+         jQuery('#b').click();
+       });
 
+      jQuery('#b').bind("touchstart touchend touchmove click",function(event) 
+       {
+    event.preventDefault();
+         alert('Test');
+       });
+    });
 
 </script>
 
