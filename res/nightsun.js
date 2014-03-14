@@ -112,18 +112,18 @@ $('#play').text('APLY');
   });
   
   // start key binding
-  
- $(document.documentElement).keydown(function(event) {
-        event.preventDefault();
-        if(event.which === 32) {
-            if($("#jpId").data("jPlayer").status.paused) {
-               $("#jpId").jPlayer("play");
-            } else {
-               $("#jpId").jPlayer("pause");
-            }
-        }
-        
-    });
+ //  
+//  $(document.documentElement).keydown(function(event) {
+//         event.preventDefault();
+//         if(event.which === 32) {
+//             if($("#jpId").data("jPlayer").status.paused) {
+//                $("#jpId").jPlayer("play");
+//             } else {
+//                $("#jpId").jPlayer("pause");
+//             }
+//         }
+//         
+//     });
 // end key binding
   
 function startLyrics () {
